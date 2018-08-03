@@ -1,6 +1,6 @@
 <div class="container-fluid"style="text-align:center">
     <div class="row"style=text-align:center>
-      <div class = "col-md-12 title1" style="font-size: 22px">Different Countries
+      <div class = "col-md-12 title1" style="font-size: 22px">Click on language / cuurency to apply filter
         <a class="btn btn-secondary" (click)="goBackToPreviousPage() " style="margin-left: 60%">Go Back </a></div>
     </div><br><br>
     <div class="row" style="text-align: center;">
@@ -17,9 +17,9 @@
                         <p style="font-weight: bold">Subregion: {{country.subregion}}</p>  
                         <p style="font-weight: bold">Population: {{country.population}}</p> 
                         Currency:
-                    <a [routerLink] =  "['/country',currency.code]" *ngFor='let currency of country.currencies;'> {{currency.name}}</a><br>
+                    <a [routerLink] =  "['/country/currency',currency.code]" *ngFor='let currency of country.currencies;'> {{currency.name}}</a><br>
                   Language:
-                    <a [routerLink] =  "['/country',language.iso639_1]" *ngFor='let language of country.languages;'>{{language.name}}</a>
+                    <a [routerLink] =  "['/country/language',language.iso639_1]" *ngFor='let language of country.languages;'>{{language.name}}</a>
                <a href="#" class="btn btn-secondary btn-block"[routerLink]="['/name',country.name]">Know about {{country.name}}</a>
                         </div>
                     </div>

@@ -10,6 +10,9 @@ import { SinglecountryComponent } from './singlecountry/singlecountry.component'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +23,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     HttpClientModule,
+    
+    BrowserAnimationsModule,
+  
+   
     RouterModule.forRoot([
       { path:'home',component:HomeComponent },
       {path:'',component:HomeComponent,pathMatch:'full'},
       {path:'region/:name',component:CountryComponent},
       {path:'name/:name',component:SinglecountryComponent},
-      { path: 'country/:currencyCode',pathMatch: 'full', component: CountryComponent },
-      { path: 'country/:languageCode',pathMatch: 'full', component: CountryComponent }
+      { path: 'country/currency/:currencyCode',pathMatch: 'full', component: CountryComponent },
+      { path: 'country/language/:languageCode',pathMatch: 'full', component: CountryComponent }
     ],{useHash: true})
   ],
   providers: [CountryService],

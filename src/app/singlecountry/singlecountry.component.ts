@@ -29,6 +29,7 @@ export class SinglecountryComponent implements OnInit {
         console.log(error.errorMessage);
 
       })
+      
   }
   goBackToPreviousPage(): any {
 

@@ -14,10 +14,10 @@
                   <p style="margin-left: 40%;"> Native Name: {{currentCountry.nativeName}}</p>
                   <p style="margin-left: 40%;">Capital:  {{currentCountry.capital}}</p>
                   <p style="margin-left: 40%;">Region: {{currentCountry.region}}</p>
-                  
-                  <a  style="margin-left: 40%;"  [routerLink] =  "['/country',currency.code]" *ngFor='let currency of currentCountry.currencies;'> {{currency.name}}</a><br>
-                
-                  <a  style="margin-left: 40%;" [routerLink] =  "['/country',language.iso639_1]" *ngFor='let language of currentCountry.languages;'>{{language.name}}</a>
+                 <div style="margin-left:40%;"> Currency:
+                  <a   [routerLink] =   "['/country/currency',currency.code]" *ngFor='let currency of currentCountry.currencies;'> {{currency.name}}</a><br></div>
+                  <div style="margin-left:40%;">  Language:
+                  <a   [routerLink] =  "['/country/language',language.iso639_1]"  *ngFor='let language of currentCountry.languages;'>{{language.name}}</a></div>
     <p style="margin-left: 40%;">Population:{{currentCountry.population}}</p>
     <p style="margin-left: 40%;">Area:{{currentCountry.area}}</p>
     <p style="margin-left: 40%;">Sub-region: {{currentCountry.subregion}}</p>

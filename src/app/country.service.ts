@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpErrorResponse} from '@angular/common/http';
-import { Observable } from "rxjs";
+import {Observable} from 'rxjs/Observable';
 
-
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
-  public allCountries;
-  public currentCountry;
+
 public baseUrl ='https://restcountries.eu/rest/v2';
   constructor(private _http:HttpClient) { }
   private handleError(err: HttpErrorResponse) {
@@ -27,7 +27,7 @@ public getSingleCountry(countryName):any{
   return singleCountry;
 }
 public getCurrencyBasedCountries(currencyCode) :any{
-  let currency = this._http.get(this.baseUrl + '/currency' +'/' + currencyCode)
+let currency = this._http.get(this.baseUrl + '/currency' +'/' + currencyCode)
   console.log(currency);
   return currency;
 }

@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { CountryService } from '../country.service';
-import{Location} from '@angular/common'
+import{Location} from '@angular/common';
+
+
+
 
 @Component({
   selector: 'app-country',
@@ -10,9 +13,14 @@ import{Location} from '@angular/common'
 })
 export class CountryComponent implements OnInit {
   public allCountry;
+ 
 
+  constructor(private _route: ActivatedRoute, private router: Router, public countryService: CountryService , public location:Location,
+) {
 
-  constructor(private _route: ActivatedRoute, private router: Router, public countryService: CountryService , public location:Location) { }
+   
+  }
+  
 
   ngOnInit() {
     let Region = this._route.snapshot.paramMap.get('name');
@@ -37,10 +45,12 @@ export class CountryComponent implements OnInit {
   
         data => {
           console.log(data);
+         
           this.allCountry = data;
         },
         error => {
           console.log("some error occured");
+          
           console.log(error.errorMessage)
         }
   
