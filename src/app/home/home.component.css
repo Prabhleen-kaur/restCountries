@@ -1,0 +1,10 @@
+.title1
+{
+    padding: 2%;
+    font-style: italic;
+    font-weight: bold;
+
+}
+.card {
+    min-height: 200px;
+}

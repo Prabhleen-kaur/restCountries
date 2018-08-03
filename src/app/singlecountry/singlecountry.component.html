@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+  <div class="row">
+    
+      <div class="col-md-12">
+      <div row *ngIf="currentCountry">
+          <div class="card" *ngFor="let currentCountry of currentCountry">
+        <img class="card-img-top" style="width: 40% ; margin-left: 25%; margin-top: 3%" src='{{currentCountry.flag}}' alt="Card image cap">
+     
+     
+            <div class="card-body">
+              <h3 class="card-title " style="margin-left: 40%;font-style: italic;font-weight: 600" >{{currentCountry.name | uppercase}}</h3>
+              <div class="card-body" style="color:#ffff4d;background-color:black;width:70%; margin-left:10%; font-size: 32 px">
+                  <p style="margin-left: 40%;"> Native Name: {{currentCountry.nativeName}}</p>
+                  <p style="margin-left: 40%;">Capital:  {{currentCountry.capital}}</p>
+                  <p style="margin-left: 40%;">Region: {{currentCountry.region}}</p>
+                  
+                  <a  style="margin-left: 40%;"  [routerLink] =  "['/country',currency.code]" *ngFor='let currency of currentCountry.currencies;'> {{currency.name}}</a><br>
+                
+                  <a  style="margin-left: 40%;" [routerLink] =  "['/country',language.iso639_1]" *ngFor='let language of currentCountry.languages;'>{{language.name}}</a>
+    <p style="margin-left: 40%;">Population:{{currentCountry.population}}</p>
+    <p style="margin-left: 40%;">Area:{{currentCountry.area}}</p>
+    <p style="margin-left: 40%;">Sub-region: {{currentCountry.subregion}}</p>
+    <p style="margin-left: 40%;">Timezone: {{currentCountry.timezones[0]}}</p>  
+   
+
+        <a class="btn btn-warning btn-block" (click)="goBackToPreviousPage()">Go Back </a>
+     
+  </div>
+</div></div>
+  </div>
